@@ -1,2 +1,24 @@
-https://leetcode.com/problems/two-sum/description/Ja, genau, das heißt man tut erstmal für jede Zahl in der Liste. eine Liste anlegen einmal für null für die Zahl mit der berechnen dürfen und mit eins die den Index der Zahl in der Hauptliste gibt. und dann wird für jede mini-liste mit der Zahl und der koordinatenzahl in der Hauptliste geprüft, ob es mit einem anderen mini-liste die gesuchte Zahl ergeben würde. Wenn ja, dann nehme einfach von beiden Listen den Index 1. Und gebe es jetzt Liste zurück. Genau. So muss ich es machen, aber mache das nicht als Coach. Mache das nicht als Code nicht als Code nachmachen nicht als Code machen.
+# Problem: 1. Two Sum
+# Link: https://leetcode.com/problems/two-sum/description/
+# Schwierigkeit: Easy
+# Zeit erledigt in: ca. 20 min 
 
+class Solution (object):
+  	def twoSum (self, nums, target):
+
+		# List erstellen der Alten liste bei der Jede Zahl eine Liste mit 	ihrer Koordinate bekommt.
+		liste_mit_index = []
+		index = 0
+		for Zahl in nums:
+			liste_mit_index.append([Zahl,index])
+			index = index + 1
+
+		# Paar suchen das als Ergebnis die gesuchte Zahl ist:
+		for zahl_mit_liste in liste_mit_index:
+			for zahl_mit_liste_zum_addieren in liste_mit_index:
+				if zahl_mit_liste[1] != zahl_mit_liste_zum_addieren[1]:
+					if zahl_mit_liste[0] + zahl_mit_liste_zum_addieren[0] == target:
+						Koordinate_in_nums_der_richigen_zahlen = [zahl_mit_liste[1], zahl_mit_liste_zum_addieren[1]]
+
+						# Ergebnis, wenn gefunden zurückgegeben:
+						return Koordinate_in_nums_der_richigen_zahlen
